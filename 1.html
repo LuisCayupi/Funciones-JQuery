@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        * {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            padding: 10px;
+            margin: 0px;
+        }
+        
+        button {
+            position: absolute;
+            display: inline-block;
+            margin: 50px 50px 50px 50px;
+            width: 150px;
+        }
+        
+        .todo {
+            border-bottom: solid 3px black;
+        }
+        
+        .parrafo {
+            text-align: center;
+            margin-left: 200px;
+        }
+        
+        .agregar {
+            color: red;
+            font-size: xx-large;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('button.add').click(function() {
+                $('.addClass').addClass('agregar')
+            })
+            $('button.slide').click(function() {
+                $('.SlideToggle').slideToggle()
+            })
+            $('button.app').click(function() {
+                $('.append').append('<p>Has agregado un nuevo párrafo!!</p>')
+            })
+            $('button.ocultar').click(function() {
+                $('p.hide').hide();
+            })
+            $('button.mostrar').click(function() {
+                $('p.hide').show();
+            })
+            $('button.mostrarocultar').click(function() {
+                $('p.toggle').toggle()
+            })
+            $('button.up').click(function() {
+                $('p.slide').slideUp()
+            })
+            $('button.down').click(function() {
+                $('p.slide').slideDown()
+            })
+            $('button.out').click(function() {
+                $('p.fade').fadeOut()
+            })
+            $('button.in').click(function() {
+                $('p.fade').fadeIn()
+            })
+            $('button.before').click(function() {
+                $('p.introducir').before('Texto antes del párrafo')
+            })
+            $('button.after').click(function() {
+                $('p.introducir').after('Texto después del párrafo')
+            })
+            $('button.modificar').click(function() {
+                $('p.html').html('<p>El párrafo ha sido reemplazado</p>')
+            })
+            $('img').click(function() {
+                $('img').attr('src', 'perro2.jpg')
+            })
+            $('button.value').click(function() {
+                $('.val').val('HOLA!!')
+            })
+            $('button.textos').click(function() {
+                $('p.texts').text('Texto reemplazado')
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="todo">
+        <button class="add">AddClass</button>
+        <div class="parrafo">
+            <h1>AddClass</h1>
+            <p class="addClass"> Presiona el botón para añadir una clase a este párrafo</p>
+        </div>
+    </div>
+    <div class="todo">
+        <button class="slide">SlideToggle</button>
+        <div class="parrafo">
+            <h1>SlideToggle</h1>
+            <p class="SlideToggle"> Presiona el botón para deslizar y esconder este párrafo</p>
+        </div>
+    </div>
+    <div class="todo">
+        <button class="app">Append</button>
+        <div class="parrafo">
+            <h1>Append</h1>
+            <p class="append"> Presiona el botón para agregar un nuevo párrafo</p>
+        </div>
+    </div>
+    <div class="todo">
+        <button class="ocultar">Hide</button><br><br><br>
+        <button class="mostrar">Show</button>
+        <div class="parrafo">
+            <h1>Hide</h1>
+            <p class="hide"> Presiona el botón "hide"para ocultar el párrafo</p>
+            <p>Presiona "show" para volver a aparecer el párrafo</p>
+        </div>
+    </div>
+    <div class="todo">
+        <button class="mostrarocultar">Toggle</button>
+        <div class="parrafo">
+            <h1>Toggle</h1>
+            <p class="toggle"> Presiona el botón para ocultar, y nuevamente para mostrar el párrafo</p>
+        </div>
+    </div>
+    <div class="todo">
+        <button class="up">SlideUp</button><br><br><br>
+        <button class="down">SlideDown</button>
+        <div class="parrafo">
+            <h1>SlideUp - SlideDown</h1>
+            <p class="slide"> Presiona el botón "SlideUp" para ocultar el párrafo</p>
+            <p>Presiona el botón "SlideDown" para que aparezca el párrafo</p>
+        </div>
+    </div>
+    <div class="todo">
+        <button class="out">FadeOut</button><br><br><br>
+        <button class="in">FadeIn</button>
+        <div class="parrafo">
+            <h1>FadeIn - FadeOut</h1>
+            <p class="fade"> Presiona el botón "FadeOut" para desvanecer el párrafo</p>
+            <p>Presiona el botón "FadeIn" para aparecer el párrafo</p>
+        </div>
+    </div>
+    <div class="todo">
+        <button class="before">Before</button><br><br><br>
+        <button class="after">After</button>
+        <div class="parrafo">
+            <h1>Before - After</h1>
+            <p class="introducir"> Presiona el botón "Before" para agregar texto antes del párrafo, y presiona "After" para agregar texto al después del párrafo</p>
+        </div>
+    </div>
+    <div class="todo">
+        <button class="modificar">HTML</button>
+        <div class="parrafo">
+            <h1>HTML</h1>
+            <p class="html"> Presiona el botón reemplazar el párrafo</p>
+        </div>
+    </div>
+    <div class="todo">
+        <h1>Attr</h1>
+        <p>Haz click en la imagen para que el perro se ponga musculoso</p>
+        <img src="perro1.jpg" alt="perro">
+    </div>
+    <div class="todo">
+        <button class="value">Val</button>
+        <div class="parrafo">
+            <h1>Val</h1>
+            <p><input type="text" class="val"> Presiona el botón "Val" para que te devuelva un saludo</p>
+        </div>
+    </div>
+    <div class="todo">
+        <button class="textos">Text</button>
+        <div class="parrafo">
+            <h1>Text</h1>
+            <p class="texts">Presiona el botón "Text" para reemplazar el texto del párrafo</p>
+        </div>
+    </div>
+</body>
+
+</html>
